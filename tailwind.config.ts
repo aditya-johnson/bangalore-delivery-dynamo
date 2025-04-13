@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,15 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Bangalore-themed colors
+				bangalore: {
+					primary: '#FF6B35', // Vibrant orange
+					secondary: '#004E89', // Deep blue
+					accent: '#FFD166', // Warm yellow
+					muted: '#6B7FD7', // Soft purple
+					light: '#F2F5FF', // Light background
+					dark: '#1A2238', // Dark background/text
 				}
 			},
 			borderRadius: {
@@ -84,11 +94,21 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pulse-soft': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.7' },
+				},
+				'shimmer': {
+					'0%': { backgroundPosition: '-200% 0' },
+					'100%': { backgroundPosition: '200% 0' },
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-soft': 'pulse-soft 2s ease-in-out infinite',
+				'shimmer': 'shimmer 2s infinite linear'
 			}
 		}
 	},
