@@ -151,13 +151,15 @@ export function generateMockAgents(count: number = 15): DeliveryAgent[] {
     const isBusy = isOnline && Math.random() > 0.4;
     const area = getRandomItem(bangaloreAreas);
     const location = generateNearbyLocation(area.lat, area.lng);
+    // Create a non-readonly copy of the vehicleTypes array to use with getRandomItem
+    const vehicleTypesCopy = [...vehicleTypes];
 
     return {
       id,
       name,
       phone: `+91 ${9900000000 + Math.floor(Math.random() * 999999)}`,
       photo: `https://randomuser.me/api/portraits/${Math.random() > 0.7 ? 'women' : 'men'}/${(i % 70) + 1}.jpg`,
-      vehicleType: getRandomItem(vehicleTypes),
+      vehicleType: getRandomItem(vehicleTypesCopy),
       vehicleNumber: `KA-${Math.floor(Math.random() * 50) + 1}-${String.fromCharCode(65 + Math.floor(Math.random() * 26))}${String.fromCharCode(65 + Math.floor(Math.random() * 26))}-${1000 + Math.floor(Math.random() * 9000)}`,
       isOnline,
       isBusy,

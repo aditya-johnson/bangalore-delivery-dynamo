@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { DeliveryAgent } from '@/utils/mockData';
 import { 
@@ -8,7 +7,6 @@ import {
   Truck, 
   Package,
   MapPin,
-  Scooter,
   Car
 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
@@ -25,7 +23,7 @@ const AgentCard: React.FC<AgentCardProps> = ({ agent }) => {
     switch(type) {
       case 'bike': return <Bike className="h-3 w-3" />;
       case 'cycle': return <Bike className="h-3 w-3" />;
-      case 'scooter': return <Scooter className="h-3 w-3" />;
+      case 'scooter': return <Bike className="h-3 w-3" />;
       case 'car': return <Car className="h-3 w-3" />;
       default: return <Truck className="h-3 w-3" />;
     }
